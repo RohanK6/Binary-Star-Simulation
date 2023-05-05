@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script language="javascript" src="p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Binary Star Simulation</title>
+</head>
+<body>
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="10" class="slider" id="star1Mass">
+        <p id="star1MassText">Mass of Star 1 = 10</p>
+    </div>
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="10" class="slider" id="star2Mass">
+        <p id="star2MassText">Mass of Star 2 = 10</p>
+    </div>
+    <div class="slidecontainer">
+        <input type="range" min="0" max="1" value="0.5" step="0.1" class="slider" id="eccentricity">
+        <p id="eccentricityText">Eccentricity = 0.5</p>
+    </div>
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="10" class="slider" id="star1Luminosity">
+        <p id="star1LuminosityText">Luminosity of Star 1 = 10</p>
+    </div>
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="10" class="slider" id="star2Luminosity">
+        <p id="star2LuminosityText">Luminosity of Star 2 = 10</p>
+    </div>
+    <button id="stop" onclick="stop()">Stop</button>
+    <button id="start" onclick="start()">Start</button>
+
+    <div class="canvas-container">
+        <div id="canvas"></div>
+        <canvas id="luminosity-chart" width="1200" height="1000"></canvas>
+    </div>
+    
+    <script language="javascript" type="text/javascript" src="main.js"></script>
+    <script language="javascript" type="text/javascript" src="star.js"></script>
+</body>
+</html>
