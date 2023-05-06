@@ -57,25 +57,11 @@ class Star {
     }
   
     update(time) {
-      const convertedEccentricity = this.timeToEccentricity(time);
-  
-      // The this.position.x and this.position.y represent the x and y coordinates of the binary star's position. 
-      // this.tau is a value that increases over time and represents the angle of the star's position within its orbit. 
-      // this.orbitSize is the size of the star's orbit, and this.eccentricity is the eccentricity of the orbit. 
-      // convertedEccentricity is the eccentric anomaly, which is calculated using the timeToEccentricity function.
+      this.luminosity = this.calculateLuminosity();
 
-      this.position.x =
-        Math.cos(this.tau) *
-        this.orbitSize *
-        (Math.cos(convertedEccentricity) - this.eccentricity);
+      this.position.x = this.orbitSize * Math.cos(this.tau);
+      this.position.y = this.orbitSize * Math.sin(this.tau);
 
-      this.position.y =
-        Math.sin(PI / 2) *
-        Math.cos(this.tau) *
-        this.orbitSize *
-        Math.sqrt(1 - Math.pow(this.eccentricity, 2)) *
-        Math.sin(convertedEccentricity);
-  
       this.orbitPath.push(this.position.copy());
     }
   
